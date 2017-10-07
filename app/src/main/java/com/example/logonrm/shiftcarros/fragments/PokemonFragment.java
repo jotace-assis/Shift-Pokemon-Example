@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,6 +39,10 @@ public class PokemonFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_pokemon, container, false);
         rvPokemons = (RecyclerView) v.findViewById(R.id.rvPokemons);
+
+        rvPokemons.setLayoutManager(new LinearLayoutManager(getContext()));
+        rvPokemons.setHasFixedSize(true);
+
         return v;
     }
 

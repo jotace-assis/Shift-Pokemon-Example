@@ -38,8 +38,8 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.PokemonV
         holder.tvNomePokemon.setText(pokemon.getNome());
         Picasso.with(context)
                 .load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + (position + 1) + ".png")
-                .error(R.drawable.pokemonErro)
-                .placeholder(R.drawable.pokemonPlaceHolder)
+                .error(R.drawable.pokemonerro)
+                .placeholder(R.drawable.pokemonplaceholder)
                 .into(holder.ivPokemon);
     }
 
