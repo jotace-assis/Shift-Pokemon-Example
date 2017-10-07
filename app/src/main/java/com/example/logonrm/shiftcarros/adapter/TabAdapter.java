@@ -7,30 +7,24 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import com.example.logonrm.shiftcarros.fragments.PokemonFragment;
 import com.example.logonrm.shiftcarros.fragments.StarWarsFragment;
 
+import java.util.List;
+
 public class TabAdapter extends FragmentStatePagerAdapter {
 
-    public static int TOTAL_ABAS = 2;
+    public List<Fragment> fragments;
 
-    public TabAdapter(FragmentManager fm) {
+    public TabAdapter(FragmentManager fm, List<Fragment> fragments) {
         super(fm);
+        this.fragments = fragments;
     }
 
     @Override
     public Fragment getItem(int position) {
-        Fragment fragment = null;
-        switch (position) {
-            case 0:
-                fragment = new PokemonFragment();
-                break;
-            case 1:
-                fragment = new StarWarsFragment();
-                break;
-        }
-        return fragment;
+        return fragments.get(position);
     }
 
     @Override
     public int getCount() {
-        return TOTAL_ABAS;
+        return fragments.size();
     }
 }
